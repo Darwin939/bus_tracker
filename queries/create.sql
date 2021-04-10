@@ -16,5 +16,5 @@ CREATE TABLE IF NOT EXISTS bus_stop_delay_history
                     (id serial PRIMARY KEY,
                     time timestamp,
                     delay varchar,
-                    CONSTRAINT fk_bus foreign key (id) REFERENCES bus(id),
-                    CONSTRAINT fk_bus_stop foreign key (id) REFERENCES bus_stop(id));
+                    bus_id integer not null  REFERENCES  bus(id),
+                    bus_stop_id integer not null  REFERENCES  bus_stop(id));
